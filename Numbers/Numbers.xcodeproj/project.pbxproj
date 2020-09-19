@@ -14,6 +14,13 @@
 		B599373B2515F57B00F629BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B59937392515F57B00F629BC /* LaunchScreen.storyboard */; };
 		B59937452515F77C00F629BC /* MainFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59937442515F77C00F629BC /* MainFactory.swift */; };
 		B59937472515F7A900F629BC /* UseCaseFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59937462515F7A900F629BC /* UseCaseFactory.swift */; };
+		B599374D2515FE7300F629BC /* ProviderFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B599374C2515FE7300F629BC /* ProviderFactory.swift */; };
+		B59937502515FEB400F629BC /* BaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B599374F2515FEB400F629BC /* BaseProvider.swift */; };
+		B59937522515FF0000F629BC /* NumberModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59937512515FF0000F629BC /* NumberModel.swift */; };
+		B59937552515FF2A00F629BC /* NumbersProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59937542515FF2A00F629BC /* NumbersProviding.swift */; };
+		B59937582515FF6100F629BC /* NumbersProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59937572515FF6100F629BC /* NumbersProvider.swift */; };
+		B599375A2515FF9100F629BC /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59937592515FF9100F629BC /* AppError.swift */; };
+		B599375C2515FFEB00F629BC /* HTTPURLResponse+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B599375B2515FFEB00F629BC /* HTTPURLResponse+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +33,13 @@
 		B599373C2515F57B00F629BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B59937442515F77C00F629BC /* MainFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFactory.swift; sourceTree = "<group>"; };
 		B59937462515F7A900F629BC /* UseCaseFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseFactory.swift; sourceTree = "<group>"; };
+		B599374C2515FE7300F629BC /* ProviderFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderFactory.swift; sourceTree = "<group>"; };
+		B599374F2515FEB400F629BC /* BaseProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseProvider.swift; sourceTree = "<group>"; };
+		B59937512515FF0000F629BC /* NumberModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberModel.swift; sourceTree = "<group>"; };
+		B59937542515FF2A00F629BC /* NumbersProviding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersProviding.swift; sourceTree = "<group>"; };
+		B59937572515FF6100F629BC /* NumbersProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersProvider.swift; sourceTree = "<group>"; };
+		B59937592515FF9100F629BC /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
+		B599375B2515FFEB00F629BC /* HTTPURLResponse+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HTTPURLResponse+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +78,7 @@
 				B59937392515F57B00F629BC /* LaunchScreen.storyboard */,
 				B59937422515F68D00F629BC /* UseCases */,
 				B59937482515F7AE00F629BC /* Common */,
+				B599374E2515FE7800F629BC /* DAL */,
 			);
 			path = Numbers;
 			sourceTree = "<group>";
@@ -90,8 +105,46 @@
 			isa = PBXGroup;
 			children = (
 				B59937462515F7A900F629BC /* UseCaseFactory.swift */,
+				B59937592515FF9100F629BC /* AppError.swift */,
+				B599375D2515FFF100F629BC /* Extensions */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		B599374E2515FE7800F629BC /* DAL */ = {
+			isa = PBXGroup;
+			children = (
+				B599374C2515FE7300F629BC /* ProviderFactory.swift */,
+				B599374F2515FEB400F629BC /* BaseProvider.swift */,
+				B59937532515FF1200F629BC /* DOM */,
+				B59937562515FF3600F629BC /* Providers */,
+			);
+			path = DAL;
+			sourceTree = "<group>";
+		};
+		B59937532515FF1200F629BC /* DOM */ = {
+			isa = PBXGroup;
+			children = (
+				B59937512515FF0000F629BC /* NumberModel.swift */,
+			);
+			path = DOM;
+			sourceTree = "<group>";
+		};
+		B59937562515FF3600F629BC /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				B59937542515FF2A00F629BC /* NumbersProviding.swift */,
+				B59937572515FF6100F629BC /* NumbersProvider.swift */,
+			);
+			path = Providers;
+			sourceTree = "<group>";
+		};
+		B599375D2515FFF100F629BC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B599375B2515FFEB00F629BC /* HTTPURLResponse+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,10 +218,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B59937522515FF0000F629BC /* NumberModel.swift in Sources */,
+				B59937582515FF6100F629BC /* NumbersProvider.swift in Sources */,
+				B599375A2515FF9100F629BC /* AppError.swift in Sources */,
+				B599374D2515FE7300F629BC /* ProviderFactory.swift in Sources */,
 				B59937472515F7A900F629BC /* UseCaseFactory.swift in Sources */,
 				B59937332515F57A00F629BC /* MainViewController.swift in Sources */,
+				B599375C2515FFEB00F629BC /* HTTPURLResponse+Extension.swift in Sources */,
 				B59937452515F77C00F629BC /* MainFactory.swift in Sources */,
 				B599372F2515F57A00F629BC /* AppDelegate.swift in Sources */,
+				B59937502515FEB400F629BC /* BaseProvider.swift in Sources */,
+				B59937552515FF2A00F629BC /* NumbersProviding.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
