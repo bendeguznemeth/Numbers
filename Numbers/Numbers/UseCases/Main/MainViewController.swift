@@ -20,14 +20,14 @@ class MainViewController: BaseViewController {
         super.viewDidLoad()
         createMasterViewController()
         setupSplitView()
-        addNeededChildViewController()
+        createChildViewControllerHierarchy(withSplitView: isSplitViewControllerNeeded())
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         if UIDevice.current.userInterfaceIdiom == .pad {
             disassembleChildViewControllerHierarchy()
-            addNeededChildViewController()
+            createChildViewControllerHierarchy(withSplitView: isSplitViewControllerNeeded(forSize: size))
         }
     }
     
@@ -36,8 +36,8 @@ class MainViewController: BaseViewController {
         mySplitViewController.preferredDisplayMode = .allVisible
     }
     
-    private func addNeededChildViewController() {
-        if isSplitViewControllerNeeded() {
+    private func createChildViewControllerHierarchy(withSplitView: Bool) {
+        if withSplitView {
             masterNavigationController.setViewControllers([masterViewController], animated: false)
             detailNavigationController.setViewControllers([detailViewController], animated: false)
             mySplitViewController.viewControllers = [masterNavigationController,
@@ -49,11 +49,20 @@ class MainViewController: BaseViewController {
         }
     }
     
-    private func isSplitViewControllerNeeded() -> Bool {
-        let idiom = UIDevice.current.userInterfaceIdiom
-        let orientation = UIApplication.shared.statusBarOrientation
+    private func isSplitViewControllerNeeded(forSize size: CGSize? = nil) -> Bool {
         
-        return !(idiom == .pad && (orientation == .portrait || orientation == .portraitUpsideDown))
+        let idiom = UIDevice.current.userInterfaceIdiom
+        
+        let isPortrait: Bool
+        
+        if let size = size {
+            isPortrait = size.height > size.width
+        } else {
+            let orientation = UIApplication.shared.statusBarOrientation
+            isPortrait = orientation == .portrait || orientation == .portraitUpsideDown
+        }
+        
+        return !(idiom == .pad && isPortrait)
     }
     
     private func disassembleChildViewControllerHierarchy() {
