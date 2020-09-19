@@ -1,5 +1,5 @@
 //
-//  MainViewController.swift
+//  BaseViewController.swift
 //  Numbers
 //
 //  Created by Bendegúz on 2020. 09. 19..
@@ -8,9 +8,6 @@
 
 import UIKit
 
-class MainViewController: BaseViewController {
+class BaseViewController: UIViewController {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
 }
