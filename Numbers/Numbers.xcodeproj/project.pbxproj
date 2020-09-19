@@ -40,6 +40,7 @@
 		B5E745C4251618FF00D59298 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E745C3251618FF00D59298 /* DetailViewController.swift */; };
 		B5E745C62516191600D59298 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E745C52516191600D59298 /* DetailPresenter.swift */; };
 		B5E745C8251619B200D59298 /* DetailFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E745C7251619B200D59298 /* DetailFactory.swift */; };
+		B5E745CA2516513700D59298 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E745C92516513700D59298 /* Reachability.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +78,7 @@
 		B5E745C3251618FF00D59298 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		B5E745C52516191600D59298 /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
 		B5E745C7251619B200D59298 /* DetailFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailFactory.swift; sourceTree = "<group>"; };
+		B5E745C92516513700D59298 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 			children = (
 				B599377825160F4900F629BC /* Global.swift */,
 				B59937592515FF9100F629BC /* AppError.swift */,
+				B5E745C92516513700D59298 /* Reachability.swift */,
 				B59937462515F7A900F629BC /* UseCaseFactory.swift */,
 				B599375D2515FFF100F629BC /* Extensions */,
 			);
@@ -320,6 +323,7 @@
 				B599377B2516136700F629BC /* UITableView+Extension.swift in Sources */,
 				B599377D2516141E00F629BC /* Array+Extension.swift in Sources */,
 				B59937522515FF0000F629BC /* NumberModel.swift in Sources */,
+				B5E745CA2516513700D59298 /* Reachability.swift in Sources */,
 				B59937672516096300F629BC /* NumberTableViewCell.swift in Sources */,
 				B59937582515FF6100F629BC /* NumbersProvider.swift in Sources */,
 				B5E745C8251619B200D59298 /* DetailFactory.swift in Sources */,

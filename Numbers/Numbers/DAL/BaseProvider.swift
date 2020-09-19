@@ -16,6 +16,11 @@ class BaseProvider {
                                  parameters: [String: String]? = nil,
                                  completion: @escaping (Result<T, AppError>) -> Void) {
         
+        if !Reachability.isConnectedToNetwork() {
+            completion(.failure(.init(withCode: .connectionError)))
+            return
+        }
+        
         let components = URLComponents(string: url)
         
         if var components = components {
