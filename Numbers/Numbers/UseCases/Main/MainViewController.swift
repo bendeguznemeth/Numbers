@@ -50,7 +50,10 @@ class MainViewController: BaseViewController {
     }
     
     private func isSplitViewControllerNeeded() -> Bool {
-        !(UIDevice.current.userInterfaceIdiom == .pad && UIApplication.shared.statusBarOrientation.isPortrait)
+        let idiom = UIDevice.current.userInterfaceIdiom
+        let orientation = UIApplication.shared.statusBarOrientation
+        
+        return !(idiom == .pad && (orientation == .portrait || orientation == .portraitUpsideDown))
     }
     
     private func disassembleChildViewControllerHierarchy() {
@@ -76,9 +79,6 @@ class MainViewController: BaseViewController {
                     } else {
                         self.masterNavigationController.pushViewController(detailViewController, animated: true)
                     }
-                } else {
-                    self.mySplitViewController.viewControllers = [self.masterNavigationController,
-                                                                  self.detailNavigationController]
                 }
             }
         })
