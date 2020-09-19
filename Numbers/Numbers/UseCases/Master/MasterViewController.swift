@@ -59,6 +59,7 @@ extension MasterViewController: MasterView {
     func display(viewContent: MasterViewContent) {
         cellContents = viewContent.cellContents
         tableView.reloadData()
+        setCellSelection()
     }
 }
 
