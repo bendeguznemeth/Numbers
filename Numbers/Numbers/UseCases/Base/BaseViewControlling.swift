@@ -9,5 +9,6 @@
 import Foundation
 
 protocol BaseViewControlling: class {
-    
+    func showLoading()
+    func hideLoading()
 }
