@@ -39,6 +39,19 @@ class BaseViewController: UIViewController {
         }
     }
     
+    func showError(_ error: AppError, withRetryBlock retryBlock: @escaping () -> Void) {
+        let alert = UIAlertController(title: "Error",
+                                      message: "An error occured (\(error.message))",
+                                      preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Retry", style: .default, handler: {_ in
+            retryBlock()
+        }))
+        
+        UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: true)
+    }
+    
     func add(viewController: UIViewController, in container: UIView) {
         addChild(viewController)
         container.addSubview(viewController.view)

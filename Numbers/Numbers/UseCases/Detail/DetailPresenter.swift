@@ -40,8 +40,12 @@ class DetailPresenter: BasePresenter {
                 executeOnMainThread {
                     self?.view?.display(viewContent: .init(text: numberModel.text, imageUrl: numberModel.imageUrl))
                 }
-            case .failure(_):
-                #warning("TODO: handle error")
+            case .failure(let error):
+                executeOnMainThread {
+                    self?.view?.showError(error, withRetryBlock: { [weak self] in
+                        self?.fetchData(forName: name)
+                    })
+                }
             }
         }
     }

@@ -44,8 +44,12 @@ class MasterPresenter: BasePresenter {
                 if let name = cellContents.first?.name {
                     self?.loadDetailFor(name: name, withNavigation: false)
                 }
-            case .failure(_):
-                #warning("TODO: handle error")
+            case .failure(let error):
+                executeOnMainThread {
+                    self?.view?.showError(error, withRetryBlock: { [weak self] in
+                        self?.fetchNumbersData()
+                    })
+                }
             }
         }
     }

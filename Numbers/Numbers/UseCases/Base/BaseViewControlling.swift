@@ -11,4 +11,5 @@ import Foundation
 protocol BaseViewControlling: class {
     func showLoading()
     func hideLoading()
+    func showError(_ error: AppError, withRetryBlock retryBlock: @escaping () -> Void)
 }
