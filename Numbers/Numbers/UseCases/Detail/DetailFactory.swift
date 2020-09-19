@@ -16,7 +16,11 @@ extension UseCaseFactory {
             preconditionFailure("DetailViewController cannot be instantiated")
         }
         
-        let presenter = DetailPresenter(view: view, numbersProvider: ProviderFactory.numbersProvider(), params: params)
+        let numbersProvider = ProviderFactory.numbersProvider()
+        
+        let presenter = DetailPresenter(view: view,
+                                        numbersProvider: numbersProvider,
+                                        params: params)
         
         view.presenter = presenter
         

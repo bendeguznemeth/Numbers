@@ -85,6 +85,9 @@ extension MasterViewController: UITableViewDataSource {
 
 extension MasterViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        #warning("TODO: handle selection")
+        self.indexPathForSelectedRow = indexPath
+        if let name = cellContents[safeIndex: indexPath.row]?.name {
+            presenter.loadDetailFor(name: name, withNavigation: true)
+        }
     }
 }

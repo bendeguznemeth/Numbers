@@ -11,9 +11,7 @@ import Foundation
 class DetailPresenter: BasePresenter {
     
     private weak var view: DetailView?
-    
     private let numbersProvider: NumbersProviding
-    
     private let params: DetailParams?
     
     init(view: DetailView, numbersProvider: NumbersProviding, params: DetailParams?) {

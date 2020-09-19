@@ -9,14 +9,18 @@
 import UIKit
 
 extension UseCaseFactory {
-    static func masterViewController() -> MasterViewController {
+    static func masterViewController(withParams params: MasterParams) -> MasterViewController {
         
         let storyboard = UIStoryboard(name: "Master", bundle: Bundle.main)
         guard let view = storyboard.instantiateInitialViewController() as? MasterViewController else {
             preconditionFailure("MasterViewController cannot be instantiated")
         }
         
-        let presenter = MasterPresenter(view: view, numbersProvider: ProviderFactory.numbersProvider())
+        let numbersProvider = ProviderFactory.numbersProvider()
+        
+        let presenter = MasterPresenter(view: view,
+                                        numbersProvider: numbersProvider,
+                                        params: params)
         
         view.presenter = presenter
         

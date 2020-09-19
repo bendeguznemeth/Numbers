@@ -8,6 +8,10 @@
 
 import Foundation
 
+struct MasterParams {
+    let detailNavigationCallBack: (_ name: String, _ shouldNavigate: Bool) -> Void
+}
+
 struct MasterViewContent {
     
     let cellContents: [CellContent]
