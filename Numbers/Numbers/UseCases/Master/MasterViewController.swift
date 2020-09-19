@@ -17,11 +17,23 @@ class MasterViewController: BaseViewController {
     
     private var cellContents = [MasterViewContent.CellContent]()
     
+    private var indexPathForSelectedRow = IndexPath(row: .zero, section: .zero)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationItem()
         setupTableView()
         presenter.viewDidLoad()
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        setCellSelection()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setCellSelection()
     }
     
     private func setupNavigationItem() {
@@ -32,6 +44,14 @@ class MasterViewController: BaseViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(NumberTableViewCell.self)
+    }
+    
+    private func setCellSelection() {
+        if let splitVC = splitViewController, !splitVC.isCollapsed {
+            tableView.selectRow(at: indexPathForSelectedRow, animated: false, scrollPosition: .none)
+        } else {
+            tableView.deselectRow(at: indexPathForSelectedRow, animated: false)
+        }
     }
 }
 
