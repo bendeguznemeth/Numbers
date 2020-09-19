@@ -38,4 +38,18 @@ class BaseViewController: UIViewController {
             self?.view.isUserInteractionEnabled = true
         }
     }
+    
+    func add(viewController: UIViewController, in container: UIView) {
+        addChild(viewController)
+        container.addSubview(viewController.view)
+        viewController.view.frame = view.bounds
+        viewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        viewController.didMove(toParent: self)
+    }
+    
+    func remove(viewController: UIViewController) {
+        viewController.willMove(toParent: nil)
+        viewController.view.removeFromSuperview()
+        viewController.removeFromParent()
+    }
 }

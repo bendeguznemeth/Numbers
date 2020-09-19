@@ -24,7 +24,17 @@
 		B599375F2516064C00F629BC /* BaseViewControlling.swift in Sources */ = {isa = PBXBuildFile; fileRef = B599375E2516064C00F629BC /* BaseViewControlling.swift */; };
 		B59937622516068900F629BC /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59937612516068900F629BC /* BaseViewController.swift */; };
 		B5993764251606BA00F629BC /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5993763251606BA00F629BC /* BasePresenter.swift */; };
+		B59937672516096300F629BC /* NumberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59937652516096300F629BC /* NumberTableViewCell.swift */; };
+		B59937682516096300F629BC /* NumberTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B59937662516096300F629BC /* NumberTableViewCell.xib */; };
+		B599376C25160A4500F629BC /* Master.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B599376B25160A4500F629BC /* Master.storyboard */; };
+		B599376E25160B1E00F629BC /* MasterContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = B599376D25160B1E00F629BC /* MasterContract.swift */; };
+		B599377025160C0600F629BC /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B599376F25160C0600F629BC /* MasterViewController.swift */; };
 		B599377325160C9D00F629BC /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = B599377225160C9D00F629BC /* SDWebImage */; };
+		B599377525160E9A00F629BC /* MasterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B599377425160E9A00F629BC /* MasterPresenter.swift */; };
+		B599377725160ED800F629BC /* MasterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B599377625160ED800F629BC /* MasterFactory.swift */; };
+		B599377925160F4900F629BC /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = B599377825160F4900F629BC /* Global.swift */; };
+		B599377B2516136700F629BC /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B599377A2516136700F629BC /* UITableView+Extension.swift */; };
+		B599377D2516141E00F629BC /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B599377C2516141E00F629BC /* Array+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +57,16 @@
 		B599375E2516064C00F629BC /* BaseViewControlling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewControlling.swift; sourceTree = "<group>"; };
 		B59937612516068900F629BC /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		B5993763251606BA00F629BC /* BasePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePresenter.swift; sourceTree = "<group>"; };
+		B59937652516096300F629BC /* NumberTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberTableViewCell.swift; sourceTree = "<group>"; };
+		B59937662516096300F629BC /* NumberTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NumberTableViewCell.xib; sourceTree = "<group>"; };
+		B599376B25160A4500F629BC /* Master.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Master.storyboard; sourceTree = "<group>"; };
+		B599376D25160B1E00F629BC /* MasterContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterContract.swift; sourceTree = "<group>"; };
+		B599376F25160C0600F629BC /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		B599377425160E9A00F629BC /* MasterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterPresenter.swift; sourceTree = "<group>"; };
+		B599377625160ED800F629BC /* MasterFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterFactory.swift; sourceTree = "<group>"; };
+		B599377825160F4900F629BC /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
+		B599377A2516136700F629BC /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
+		B599377C2516141E00F629BC /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +116,7 @@
 			children = (
 				B59937602516065000F629BC /* Base */,
 				B59937432515F69800F629BC /* Main */,
+				B599376A2516096E00F629BC /* Master */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -113,8 +134,9 @@
 		B59937482515F7AE00F629BC /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				B59937462515F7A900F629BC /* UseCaseFactory.swift */,
+				B599377825160F4900F629BC /* Global.swift */,
 				B59937592515FF9100F629BC /* AppError.swift */,
+				B59937462515F7A900F629BC /* UseCaseFactory.swift */,
 				B599375D2515FFF100F629BC /* Extensions */,
 			);
 			path = Common;
@@ -151,6 +173,8 @@
 		B599375D2515FFF100F629BC /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				B599377C2516141E00F629BC /* Array+Extension.swift */,
+				B599377A2516136700F629BC /* UITableView+Extension.swift */,
 				B599375B2515FFEB00F629BC /* HTTPURLResponse+Extension.swift */,
 			);
 			path = Extensions;
@@ -164,6 +188,28 @@
 				B5993763251606BA00F629BC /* BasePresenter.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		B59937692516096700F629BC /* NumberTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				B59937662516096300F629BC /* NumberTableViewCell.xib */,
+				B59937652516096300F629BC /* NumberTableViewCell.swift */,
+			);
+			path = NumberTableViewCell;
+			sourceTree = "<group>";
+		};
+		B599376A2516096E00F629BC /* Master */ = {
+			isa = PBXGroup;
+			children = (
+				B59937692516096700F629BC /* NumberTableViewCell */,
+				B599376B25160A4500F629BC /* Master.storyboard */,
+				B599376D25160B1E00F629BC /* MasterContract.swift */,
+				B599376F25160C0600F629BC /* MasterViewController.swift */,
+				B599377425160E9A00F629BC /* MasterPresenter.swift */,
+				B599377625160ED800F629BC /* MasterFactory.swift */,
+			);
+			path = Master;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,8 +276,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B59937682516096300F629BC /* NumberTableViewCell.xib in Resources */,
 				B599373B2515F57B00F629BC /* LaunchScreen.storyboard in Resources */,
 				B59937382515F57B00F629BC /* Assets.xcassets in Resources */,
+				B599376C25160A4500F629BC /* Master.storyboard in Resources */,
 				B59937362515F57A00F629BC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -245,15 +293,23 @@
 			files = (
 				B59937622516068900F629BC /* BaseViewController.swift in Sources */,
 				B5993764251606BA00F629BC /* BasePresenter.swift in Sources */,
+				B599377B2516136700F629BC /* UITableView+Extension.swift in Sources */,
+				B599377D2516141E00F629BC /* Array+Extension.swift in Sources */,
 				B59937522515FF0000F629BC /* NumberModel.swift in Sources */,
+				B59937672516096300F629BC /* NumberTableViewCell.swift in Sources */,
 				B59937582515FF6100F629BC /* NumbersProvider.swift in Sources */,
 				B599375A2515FF9100F629BC /* AppError.swift in Sources */,
+				B599377525160E9A00F629BC /* MasterPresenter.swift in Sources */,
 				B599374D2515FE7300F629BC /* ProviderFactory.swift in Sources */,
+				B599377925160F4900F629BC /* Global.swift in Sources */,
 				B59937472515F7A900F629BC /* UseCaseFactory.swift in Sources */,
 				B599375F2516064C00F629BC /* BaseViewControlling.swift in Sources */,
+				B599376E25160B1E00F629BC /* MasterContract.swift in Sources */,
 				B59937332515F57A00F629BC /* MainViewController.swift in Sources */,
+				B599377025160C0600F629BC /* MasterViewController.swift in Sources */,
 				B599375C2515FFEB00F629BC /* HTTPURLResponse+Extension.swift in Sources */,
 				B59937452515F77C00F629BC /* MainFactory.swift in Sources */,
+				B599377725160ED800F629BC /* MasterFactory.swift in Sources */,
 				B599372F2515F57A00F629BC /* AppDelegate.swift in Sources */,
 				B59937502515FEB400F629BC /* BaseProvider.swift in Sources */,
 				B59937552515FF2A00F629BC /* NumbersProviding.swift in Sources */,
